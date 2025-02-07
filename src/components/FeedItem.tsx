@@ -1,22 +1,17 @@
-import { Share2 } from "lucide-react";
+import React from "react";
 
-export interface WikiArticle {
+export interface Article {
   title: string;
   extract: string;
   pageid: number;
   url: string;
-  thumbnail: {
-    source: string;
-    width: number;
-    height: number;
-  };
 }
 
-interface WikiCardProps {
-  article: WikiArticle;
+interface FeedItemProps {
+  article: Article;
 }
 
-export function Item({ article }: WikiCardProps) {
+export function FeedItem({ article }: FeedItemProps) {
   return (
     <div className="h-screen w-full flex items-center justify-center snap-start relative">
       <div className="h-full w-full relative">
@@ -31,22 +26,10 @@ export function Item({ article }: WikiCardProps) {
               rel="noopener noreferrer"
               className="hover:text-gray-200 transition-colors"
             >
-              <h2 className="text-2xl font-bold drop-shadow-lg">
-                {article.title}
-              </h2>
+              <h2 className="text-2xl drop-shadow-lg">{article.title}</h2>
             </a>
-            <div className="flex gap-2">
-              <button
-                className="p-2 rounded-full bg-white/10 backdrop-blur-sm hover:bg-white/20 transition-colors"
-                aria-label="Share article"
-              >
-                <Share2 className="w-5 h-5" />
-              </button>
-            </div>
           </div>
-          <p className="text-gray-100 mb-4 drop-shadow-lg line-clamp-6">
-            {article.extract}
-          </p>
+          <p className="">{article.extract}</p>
           <a
             href={article.url}
             target="_blank"

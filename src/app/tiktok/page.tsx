@@ -1,6 +1,6 @@
 "use client";
 
-import { Item } from "@/components/item";
+import { FeedItem } from "@/components/FeedItem";
 import { Loader2 } from "lucide-react";
 import { useCallback, useEffect, useRef } from "react";
 import { useWikiArticles } from "../hooks/useWikiArticles";
@@ -35,19 +35,19 @@ export default function Tiktok() {
   return (
     <div className="h-screen w-full bg-black text-white overflow-y-scroll snap-y snap-mandatory">
       <div className="fixed top-4 left-4 z-50">
-        <button className="text-2xl font-bold text-white drop-shadow-lg hover:opacity-80 transition-opacity">
-          WikiTok
+        <button className="font-semibold text-white drop-shadow-lg hover:opacity-80 transition-opacity">
+          Nerd
         </button>
       </div>
 
       {articles.map((article) => (
-        <Item key={article.pageid} article={article} />
+        <FeedItem key={article.pageid} article={article} />
       ))}
       <div ref={observerTarget} className="h-10 -mt-1" />
       {loading && (
         <div className="h-screen w-full flex items-center justify-center gap-2">
-          <Loader2 className="h-6 w-6 animate-spin" />
-          <span>Loading...</span>
+          <Loader2 className="h-4 w-4 animate-spin" />
+          <span className="text-sm">Loading...</span>
         </div>
       )}
     </div>

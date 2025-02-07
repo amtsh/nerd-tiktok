@@ -1,4 +1,4 @@
-import { WikiArticle } from "@/components/item";
+import { WikiArticle } from "@/components/FeedItem";
 import { useState, useCallback } from "react";
 
 const preloadImage = (src: string): Promise<void> => {
