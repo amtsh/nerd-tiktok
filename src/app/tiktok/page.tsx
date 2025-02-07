@@ -33,13 +33,7 @@ export default function Tiktok() {
   }, [handleObserver]);
 
   return (
-    <div className="h-screen w-full bg-black text-white overflow-y-scroll snap-y snap-mandatory">
-      <div className="fixed top-4 left-4 z-50">
-        <button className="font-semibold text-white drop-shadow-lg hover:opacity-80 transition-opacity">
-          Nerd
-        </button>
-      </div>
-
+    <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory">
       {articles.map((article) => (
         <FeedItem key={article.pageid} article={article} />
       ))}

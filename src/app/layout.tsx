@@ -16,7 +16,20 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <div className="bg-black text-white">
+          <div className="fixed top-4 left-4 z-50">
+            <a
+              href="/"
+              className="font-semibold text-white drop-shadow-lg hover:opacity-80 transition-opacity"
+            >
+              Nerd
+            </a>
+          </div>
+
+          {children}
+        </div>
+      </body>
     </html>
   );
 }
