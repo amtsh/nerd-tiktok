@@ -10,12 +10,17 @@ export default function Feed() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic");
-  if (!topic) {
-    router.push("/");
-    return null;
-  }
-  const { pages, loading, fetchPages } = useFetchBook(topic || "");
+  const { pages, loading, error, fetchPages } = useFetchBook(topic || "");
   const observerTarget = useRef(null);
+
+  useEffect(() => {
+    if (!topic) {
+      router.push("/");
+      return;
+    }
+    // Initial fetch when component mounts
+    fetchPages();
+  }, [fetchPages, topic, router]);
 
   const handleObserver = useCallback(
     (entries: IntersectionObserverEntry[]) => {
@@ -39,6 +44,14 @@ export default function Feed() {
 
     return () => observer.disconnect();
   }, [handleObserver]);
+
+  if (error) {
+    return (
+      <div className="h-screen w-full flex items-center justify-center">
+        <span className="text-red-500">Error: {error}</span>
+      </div>
+    );
+  }
 
   return (
     <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory">
