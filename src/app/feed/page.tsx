@@ -11,7 +11,7 @@ export default function Feed() {
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic");
   const { pages, loading, error, fetchPages } = useFetchBook(topic || "");
-  const observerTarget = useRef(null);
+  const observerTarget = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     if (!topic) {
@@ -20,7 +20,7 @@ export default function Feed() {
     }
     // Initial fetch when component mounts
     fetchPages();
-  }, [fetchPages, topic, router]);
+  }, []);
 
   const handleObserver = useCallback(
     (entries: IntersectionObserverEntry[]) => {
