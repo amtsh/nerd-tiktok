@@ -28,11 +28,11 @@ export default function RootLayout({
               defaultTheme="dark"
               disableTransitionOnChange
             >
-              <div className="min-h-screen">
+              <div className="min-h-screen bg-black antialiased">
                 <div className="fixed top-4 left-4 z-50">
                   <a
                     href="/"
-                    className="font-semibold text-white drop-shadow-lg hover:opacity-80 transition-opacity"
+                    className="font-semibold drop-shadow-lg hover:opacity-80 transition-opacity"
                   >
                     Nerd
                   </a>

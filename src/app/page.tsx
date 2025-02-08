@@ -28,7 +28,7 @@ export default function Home() {
       <Table className="max-w-md mx-auto">
         <TableHeader>
           <TableRow>
-            <TableHead className="text-center">Today&apos;s topics</TableHead>
+            <TableHead className="">Today&apos;s topics</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
@@ -39,7 +39,7 @@ export default function Home() {
               legacyBehavior
             >
               <TableRow className="border-0 cursor-pointer">
-                <TableCell className="text-center">{topic}</TableCell>
+                <TableCell className="text-lg">{topic}</TableCell>
               </TableRow>
             </Link>
           ))}
