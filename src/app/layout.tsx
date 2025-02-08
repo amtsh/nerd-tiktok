@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
+// import { DarkModeToggle } from "@/components/DarkModeToggle";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -15,21 +17,31 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
-      <body className={inter.className}>
-        <div className="bg-black text-white">
-          <div className="fixed top-4 left-4 z-50">
-            <a
-              href="/"
-              className="font-semibold text-white drop-shadow-lg hover:opacity-80 transition-opacity"
-            >
-              Nerd
-            </a>
-          </div>
+    <>
+      <html lang="en" suppressHydrationWarning>
+        <head />
+        <body className={inter.className}>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="dark"
+            disableTransitionOnChange
+          >
+            <div className="min-h-screen">
+              <div className="fixed top-4 left-4 z-50">
+                <a
+                  href="/"
+                  className="font-semibold text-white drop-shadow-lg hover:opacity-80 transition-opacity"
+                >
+                  Nerd
+                </a>
+                {/* <DarkModeToggle /> */}
+              </div>
 
-          {children}
-        </div>
-      </body>
-    </html>
+              {children}
+            </div>
+          </ThemeProvider>
+        </body>
+      </html>
+    </>
   );
 }

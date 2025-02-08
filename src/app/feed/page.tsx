@@ -5,7 +5,7 @@ import { Loader2 } from "lucide-react";
 import { useCallback, useEffect, useRef } from "react";
 import { useWikiArticles } from "../hooks/useWikiArticles";
 
-export default function Tiktok() {
+export default function Feed() {
   const { articles, loading, fetchArticles } = useWikiArticles();
   const observerTarget = useRef(null);
 
