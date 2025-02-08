@@ -4,9 +4,17 @@ import { FeedItem } from "@/components/FeedItem";
 import { Loader2 } from "lucide-react";
 import { useCallback, useEffect, useRef } from "react";
 import { useFetchBook } from "../hooks/useFetchBook";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export default function Feed() {
-  const { pages, loading, fetchPages } = useFetchBook();
+  const router = useRouter();
+  const searchParams = useSearchParams();
+  const topic = searchParams.get("topic");
+  if (!topic) {
+    router.push("/");
+    return null;
+  }
+  const { pages, loading, fetchPages } = useFetchBook(topic || "");
   const observerTarget = useRef(null);
 
   const handleObserver = useCallback(
