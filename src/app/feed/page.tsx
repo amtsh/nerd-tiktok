@@ -3,20 +3,20 @@
 import { FeedItem } from "@/components/FeedItem";
 import { Loader2 } from "lucide-react";
 import { useCallback, useEffect, useRef } from "react";
-import { useWikiArticles } from "../hooks/useWikiArticles";
+import { useFetchBook } from "../hooks/useFetchBook";
 
 export default function Feed() {
-  const { articles, loading, fetchArticles } = useWikiArticles();
+  const { pages, loading, fetchPages } = useFetchBook();
   const observerTarget = useRef(null);
 
   const handleObserver = useCallback(
     (entries: IntersectionObserverEntry[]) => {
       const [target] = entries;
       if (target.isIntersecting && !loading) {
-        fetchArticles();
+        fetchPages();
       }
     },
-    [loading, fetchArticles]
+    [loading, fetchPages]
   );
 
   useEffect(() => {
@@ -34,8 +34,8 @@ export default function Feed() {
 
   return (
     <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory">
-      {articles.map((article) => (
-        <FeedItem key={article.pageid} article={article} />
+      {pages.map((page) => (
+        <FeedItem key={page.pageid} page={page} />
       ))}
       <div ref={observerTarget} className="h-10 -mt-1" />
       {loading && (

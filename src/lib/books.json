@@ -1,0 +1,256 @@
+[
+  {
+    "id": "dark-matter",
+    "topic": "Dark Matter",
+    "pages": [
+      {
+        "extract": "Dark matter is a hypothetical form of matter thought to account for approximately 85% of the matter in the universe.",
+        "pageid": 1
+      },
+      {
+        "extract": "The existence of dark matter is inferred from gravitational effects on visible matter and the structure of the cosmos.",
+        "pageid": 2
+      },
+      {
+        "extract": "Dark matter has not been directly observed, but its presence is suggested through gravitational effects on galaxies and galaxy clusters.",
+        "pageid": 3
+      },
+      {
+        "extract": "The term 'dark matter' refers to matter that does not interact with electromagnetic radiation, such as light.",
+        "pageid": 4
+      },
+      {
+        "extract": "Scientists believe dark matter forms a network of cosmic filaments throughout the universe, shaping the distribution of galaxies.",
+        "pageid": 5
+      },
+      {
+        "extract": "The search for dark matter particles involves sophisticated detectors deep underground to shield from cosmic rays.",
+        "pageid": 6
+      },
+      {
+        "extract": "Dark matter was first postulated by Swiss astronomer Fritz Zwicky in 1933 to explain the motion of galaxies in clusters.",
+        "pageid": 7
+      },
+      {
+        "extract": "The bullet cluster collision provides some of the strongest evidence for the existence of dark matter.",
+        "pageid": 8
+      },
+      {
+        "extract": "WIMPs (Weakly Interacting Massive Particles) are among the leading candidates for dark matter particles.",
+        "pageid": 9
+      },
+      {
+        "extract": "Understanding dark matter is crucial for explaining how galaxies form and evolve over cosmic time.",
+        "pageid": 10
+      }
+    ]
+  },
+  {
+    "id": "seretonin",
+    "topic": "Seretonin",
+    "pages": [
+      {
+        "extract": "Serotonin is a neurotransmitter that plays a key role in mood regulation, happiness, and well-being.",
+        "pageid": 11
+      },
+      {
+        "extract": "About 90% of the body's serotonin is produced in the digestive tract, not the brain.",
+        "pageid": 12
+      },
+      {
+        "extract": "Low serotonin levels are associated with depression, anxiety, and sleep disorders.",
+        "pageid": 13
+      },
+      {
+        "extract": "Selective Serotonin Reuptake Inhibitors (SSRIs) are common antidepressants that work by increasing serotonin levels.",
+        "pageid": 14
+      },
+      {
+        "extract": "Serotonin helps regulate appetite, digestion, and bone density.",
+        "pageid": 15
+      }
+    ]
+  },
+  {
+    "id": "building-habits",
+    "topic": "Building Habits",
+    "pages": [
+      {
+        "extract": "Habits are formed through a loop of cue, craving, response, and reward.",
+        "pageid": 16
+      },
+      {
+        "extract": "It takes an average of 66 days for a new behavior to become automatic.",
+        "pageid": 17
+      },
+      {
+        "extract": "Small, consistent changes are more effective than dramatic transformations when building habits.",
+        "pageid": 18
+      },
+      {
+        "extract": "Environment design plays a crucial role in habit formation and maintenance.",
+        "pageid": 19
+      },
+      {
+        "extract": "Habit stacking involves linking a new habit to an existing one to increase success.",
+        "pageid": 20
+      }
+    ]
+  },
+  {
+    "id": "inflammation",
+    "topic": "Inflammation",
+    "pages": [
+      {
+        "extract": "Inflammation is the body's natural response to injury or infection.",
+        "pageid": 21
+      },
+      {
+        "extract": "Chronic inflammation can contribute to various diseases including heart disease and cancer.",
+        "pageid": 22
+      },
+      {
+        "extract": "Diet, stress, and sleep quality all influence inflammation levels in the body.",
+        "pageid": 23
+      },
+      {
+        "extract": "Anti-inflammatory foods include leafy greens, fatty fish, and berries.",
+        "pageid": 24
+      },
+      {
+        "extract": "Exercise can help reduce chronic inflammation in the body.",
+        "pageid": 25
+      }
+    ]
+  },
+  {
+    "id": "breathing-from-diaphragm",
+    "topic": "Breathing from Diaphragm",
+    "pages": [
+      {
+        "extract": "Diaphragmatic breathing engages the body's main breathing muscle located below the lungs.",
+        "pageid": 26
+      },
+      {
+        "extract": "This breathing technique can help reduce stress and lower blood pressure.",
+        "pageid": 27
+      },
+      {
+        "extract": "Proper diaphragmatic breathing involves the belly expanding on inhale and contracting on exhale.",
+        "pageid": 28
+      },
+      {
+        "extract": "Regular practice of diaphragmatic breathing can improve core stability and posture.",
+        "pageid": 29
+      },
+      {
+        "extract": "Many people breathe incorrectly, using chest breathing instead of diaphragmatic breathing.",
+        "pageid": 30
+      }
+    ]
+  },
+  {
+    "id": "photons",
+    "topic": "Photons",
+    "pages": [
+      {
+        "extract": "Photons are elementary particles that carry electromagnetic force, including light.",
+        "pageid": 31
+      },
+      {
+        "extract": "Photons have zero rest mass and always travel at the speed of light in a vacuum.",
+        "pageid": 32
+      },
+      {
+        "extract": "The energy of a photon determines its wavelength and frequency.",
+        "pageid": 33
+      },
+      {
+        "extract": "Photons exhibit both wave-like and particle-like properties, known as wave-particle duality.",
+        "pageid": 34
+      },
+      {
+        "extract": "Solar panels work by converting photons from sunlight into electrical energy.",
+        "pageid": 35
+      }
+    ]
+  },
+  {
+    "id": "vagus-nerve",
+    "topic": "Vagus Nerve",
+    "pages": [
+      {
+        "extract": "The vagus nerve is the longest cranial nerve, extending from the brain to the abdomen.",
+        "pageid": 36
+      },
+      {
+        "extract": "It plays a crucial role in the parasympathetic nervous system, controlling rest and digestion.",
+        "pageid": 37
+      },
+      {
+        "extract": "Vagal tone can be improved through deep breathing, meditation, and cold exposure.",
+        "pageid": 38
+      },
+      {
+        "extract": "The vagus nerve influences heart rate, digestion, immune response, and mood.",
+        "pageid": 39
+      },
+      {
+        "extract": "Vagus nerve stimulation is used as a treatment for epilepsy and depression.",
+        "pageid": 40
+      }
+    ]
+  },
+  {
+    "id": "gluten",
+    "topic": "Gluten",
+    "pages": [
+      {
+        "extract": "Gluten is a protein found in wheat, barley, rye, and some other grains.",
+        "pageid": 41
+      },
+      {
+        "extract": "Celiac disease is an autoimmune disorder triggered by gluten consumption.",
+        "pageid": 42
+      },
+      {
+        "extract": "Non-celiac gluten sensitivity can cause similar symptoms to celiac disease.",
+        "pageid": 43
+      },
+      {
+        "extract": "Gluten gives bread its elastic texture and helps it rise during baking.",
+        "pageid": 44
+      },
+      {
+        "extract": "Many ancient grains like quinoa and amaranth are naturally gluten-free.",
+        "pageid": 45
+      }
+    ]
+  },
+  {
+    "id": "black-holes",
+    "topic": "Black Holes",
+    "pages": [
+      {
+        "extract": "Black holes are regions of spacetime where gravity is so strong that nothing can escape, not even light.",
+        "pageid": 46
+      },
+      {
+        "extract": "The boundary of a black hole is called the event horizon.",
+        "pageid": 47
+      },
+      {
+        "extract": "Supermassive black holes exist at the center of most galaxies, including our Milky Way.",
+        "pageid": 48
+      },
+      {
+        "extract": "Black holes form when massive stars die and collapse under their own gravity.",
+        "pageid": 49
+      },
+      {
+        "extract": "Time appears to slow down near a black hole's event horizon due to extreme gravitational effects.",
+        "pageid": 50
+      }
+    ]
+  }
+]
