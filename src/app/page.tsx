@@ -1,18 +1,9 @@
 import React from "react";
-import {
-  TableHeader,
-  TableRow,
-  TableHead,
-  TableBody,
-  TableCell,
-  Table,
-  TableFooter,
-} from "@/components/ui/table";
 import Link from "next/link";
 
 const topics = [
   "Dark matter",
-  "Seretonin",
+  "Serotonin",
   "Building habits",
   "Inflammation",
   "Breathing from diaphragm",
@@ -25,27 +16,19 @@ const topics = [
 export default function Home() {
   return (
     <div className="px-4 py-16">
-      <Table className="max-w-md mx-auto">
-        <TableHeader>
-          <TableRow>
-            <TableHead className="">Today&apos;s topics</TableHead>
-          </TableRow>
-        </TableHeader>
-        <TableBody>
-          {topics.map((topic, index) => (
-            <Link
-              key={index}
-              href={`/feed?topic=${topic.toLowerCase().replace(/\s+/g, "-")}`}
-              legacyBehavior
-            >
-              <TableRow className="border-0 cursor-pointer">
-                <TableCell className="text-lg">{topic}</TableCell>
-              </TableRow>
-            </Link>
-          ))}
-        </TableBody>
-        <TableFooter></TableFooter>
-      </Table>
+      <div className="grid grid-cols-3 gap-1 max-w-md mx-auto">
+        {topics.map((topic, index) => (
+          <Link
+            key={index}
+            href={`/feed?topic=${topic.toLowerCase().replace(/\s+/g, "-")}`}
+            legacyBehavior
+          >
+            <div className="border border-gray-700 p-4 flex items-center justify-center h-48 cursor-pointer hover:bg-zinc-900 rounded-lg">
+              <span className="text-gray-300 text-center">{topic}</span>
+            </div>
+          </Link>
+        ))}
+      </div>
 
       <div className="fixed bottom-0 left-0 w-full flex justify-center pb-4">
         <span className="text-xs text-zinc-400">
