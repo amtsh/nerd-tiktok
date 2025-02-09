@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const topics = [
   "Dark matter",
-  "Serotonin",
+  "Seretonin",
   "Building habits",
   "Inflammation",
   "Breathing from diaphragm",
