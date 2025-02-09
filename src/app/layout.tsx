@@ -4,6 +4,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 // import { DarkModeToggle } from "@/components/DarkModeToggle";
 import { Suspense } from "react";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -33,6 +34,7 @@ export default function RootLayout({
               </div>
             </ThemeProvider>
           </Suspense>
+          <Analytics />
         </body>
       </html>
     </>
