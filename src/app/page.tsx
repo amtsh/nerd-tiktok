@@ -10,16 +10,6 @@ const topics = [
   "Photons",
   "Vagus nerve",
   "Gluten",
-  "Black holes",
-  "Dark matter",
-  "Serotonin",
-  "Building habits",
-  "Inflammation",
-  "Breathing from diaphragm",
-  "Photons",
-  "Vagus nerve",
-  "Gluten",
-  "Black holes",
 ];
 
 const gradients = [
@@ -37,9 +27,19 @@ const gradients = [
 export default function Home() {
   return (
     <>
-      <div className="min-h-screen py-16">
+      <div className="min-h-screen ">
+        <div className="fixed top-10 left-4 z-50">
+          <a
+            href="/"
+            className="text-2xl font-semibold drop-shadow-lg hover:opacity-80 transition-opacity"
+          >
+            Nerd Tiktok
+          </a>
+          {/* <DarkModeToggle /> */}
+        </div>
+
         {/* start: apple books design */}
-        <div className="flex justify-center items-center min-h-screen">
+        <div className="flex justify-center items-center min-h-screen my-32">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {topics.map((topic, index) => (
               <Link

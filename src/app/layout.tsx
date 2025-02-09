@@ -29,16 +29,6 @@ export default function RootLayout({
               disableTransitionOnChange
             >
               <div className="min-h-screen bg-black antialiased">
-                <div className="fixed top-4 left-4 z-50">
-                  <a
-                    href="/"
-                    className="font-semibold drop-shadow-lg hover:opacity-80 transition-opacity opacity-50"
-                  >
-                    Nerd
-                  </a>
-                  {/* <DarkModeToggle /> */}
-                </div>
-
                 {children}
               </div>
             </ThemeProvider>

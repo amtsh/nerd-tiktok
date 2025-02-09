@@ -1,10 +1,11 @@
 "use client";
 
 import { FeedItem } from "@/components/FeedItem";
-import { Loader2 } from "lucide-react";
+import { ChevronLeft, Loader2 } from "lucide-react";
 import { useCallback, useEffect, useRef } from "react";
 import { useFetchBook } from "../hooks/useFetchBook";
 import { useRouter, useSearchParams } from "next/navigation";
+import Link from "next/link";
 
 export default function Feed() {
   const router = useRouter();
@@ -55,6 +56,15 @@ export default function Feed() {
 
   return (
     <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory">
+      <div className="top-4 left-4 fixed z-50">
+        <Link href="/">
+          <ChevronLeft
+            size={28}
+            className="absolute cursor-pointer opacity-50"
+          />
+        </Link>
+      </div>
+
       {pages.map((page) => (
         <FeedItem key={page.pageid} page={page} />
       ))}
