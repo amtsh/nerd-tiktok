@@ -75,6 +75,14 @@ export default function Home() {
       <div className="w-full flex justify-center pb-4">
         <span className="text-sm text-gray-400">Heal from doomscrolling</span>
       </div>
+
+      <div className="w-full flex justify-center pb-4">
+        <span className="text-xs text-gray-400">
+          <a target="_blank" href="https://x.com/amiitshiinde">
+            Send feedback on X/Twitter
+          </a>
+        </span>
+      </div>
     </>
   );
 }
