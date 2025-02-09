@@ -38,8 +38,8 @@ export default function Home() {
   return (
     <div className="min-h-screen py-16">
       {/* start: apple books design */}
-      <div className=" text-white flex justify-center items-center min-h-screen">
-        <div className="grid grid-cols-4 gap-6">
+      <div className="flex justify-center items-center min-h-screen">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
           {topics.map((topic, index) => (
             <Link
               key={index}
@@ -50,9 +50,11 @@ export default function Home() {
                 <div
                   className={`w-40 h-56 bg-gradient-to-b ${
                     gradients[index % gradients.length]
-                  } rounded-md flex justify-center items-center text-center text-white text-lg shadow shadow-black relative`}
+                  } rounded-md shadow-xs shadow-black relative`}
                 >
-                  {topic}
+                  <h2 className="flex justify-center items-center text-center text-white text-xl pt-8">
+                    {topic}
+                  </h2>
                   <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black opacity-50 rounded-md"></div>
                 </div>
                 {/* <p className="text-sm mt-2">Elbert Hubbard</p> */}
