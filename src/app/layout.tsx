@@ -32,7 +32,7 @@ export default function RootLayout({
                 <div className="fixed top-4 left-4 z-50">
                   <a
                     href="/"
-                    className="font-semibold drop-shadow-lg hover:opacity-80 transition-opacity"
+                    className="font-semibold drop-shadow-lg hover:opacity-80 transition-opacity opacity-50"
                   >
                     Nerd
                   </a>

@@ -13,9 +13,9 @@ interface FeedItemProps {
 export function FeedItem({ page }: FeedItemProps) {
   return (
     <div className="h-screen w-full flex items-center justify-center snap-start relative">
-      <div className="h-full w-full relative text-[#EAEAEA]">
+      <div className="h-full w-full relative ">
         <div className="absolute bottom-[15vh] left-0 right-0 p-6">
-          <h2 className="text-2xl drop-shadow-lg mb-3">
+          <h2 className="text-2xl drop-shadow-lg mb-3 opacity-50">
             {page.pageid}. {page.title}
           </h2>
 
