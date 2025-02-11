@@ -1,5 +1,5 @@
 import React from "react";
-import { Heart, MessageCircle } from "lucide-react";
+// import { Heart, MessageCircle } from "lucide-react";
 
 export interface Page {
   title: string;

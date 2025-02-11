@@ -1,7 +1,8 @@
 import React from "react";
 import Link from "next/link";
+import { headers } from "next/headers";
 
-const topics = [
+const defaultTopics = [
   "Dark matter",
   "Seretonin",
   "Building habits",
@@ -24,7 +25,15 @@ const gradients = [
   "from-indigo-700 to-indigo-900",
 ];
 
-export default function Home() {
+export default async function Home(request: Request) {
+  const hostname = await headers().get("host");
+  const apiUrl = `http://${hostname}/api/books`;
+  const res = await fetch(apiUrl);
+  const data = await res.json();
+  const topicsFromOpenAi = data || [];
+
+  const topics = [...topicsFromOpenAi, ...defaultTopics];
+
   return (
     <>
       <div className="min-h-screen ">
@@ -43,7 +52,7 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {topics.map((topic, index) => (
               <Link
-                key={index}
+                key={topic}
                 href={`/feed?topic=${topic.toLowerCase().replace(/\s+/g, "-")}`}
                 legacyBehavior
               >
