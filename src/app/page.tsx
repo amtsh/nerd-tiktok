@@ -25,7 +25,7 @@ const gradients = [
   "from-indigo-700 to-indigo-900",
 ];
 
-export default async function Home(request: Request) {
+export default async function Home() {
   const hostname = await headers().get("host");
   const apiUrl = `http://${hostname}/api/books`;
   const res = await fetch(apiUrl);
