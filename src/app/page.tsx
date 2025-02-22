@@ -4,6 +4,7 @@ import InputForm from "@/components/InputForm";
 // import { headers } from "next/headers";
 import Image from "next/image";
 import xIcon from "../../public/x.svg";
+import { Header } from "@/components/Header";
 
 const defaultTopics = [
   "Dark matter",
@@ -42,14 +43,15 @@ export default async function Home() {
   return (
     <div className="min-h-screen flex flex-col">
       <div className="flex-grow">
-        <header className="flex flex-col items-center justify-center h-dvh">
+        <Header />
+        <div className="flex flex-col items-center justify-center h-[84dvh]">
           <h1 className="text-4xl font-bold mb-4 md:text-6xl text-center bg-gradient-to-r from-orange-400 via-pink-300 to-purple-400 bg-clip-text box-decoration-clone text-transparent">
             Heal from doomscrolling
           </h1>
           <p className="mt-2 md:mt-4 text-xl md:text-2xl font-semibold text-gray-300">
             ... with microlearning
           </p>
-        </header>
+        </div>
 
         {/* start: apple books design */}
         <div className="flex justify-center items-center min-h-screen mb-16">
