@@ -66,7 +66,7 @@ export default function Feed() {
       </div>
 
       {pages.map((page) => (
-        <FeedItem key={page.pageid} page={page} />
+        <FeedItem key={page.pageNum} page={page} />
       ))}
       <div ref={observerTarget} className="h-10 -mt-1" />
       {loading && (

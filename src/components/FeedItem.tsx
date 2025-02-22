@@ -4,7 +4,7 @@ import React from "react";
 export interface Page {
   title: string;
   extract: string;
-  pageid: number;
+  pageNum: number;
 }
 
 interface FeedItemProps {
@@ -30,7 +30,7 @@ export function FeedItem({ page }: FeedItemProps) {
               <div className="flex flex-col">
                 <span className="text-sm font-medium">{page.title}</span>
                 <span className="text-xs text-gray-400">
-                  Page {page.pageid}
+                  Page {page.pageNum}
                 </span>
               </div>
             </div>
