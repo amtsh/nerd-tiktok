@@ -25,7 +25,7 @@ const InputForm = () => {
       <Input
         type="text"
         placeholder="What do you want to learn today?"
-        className="pl-6 py-6 rounded-full ring-1 ring-gray-400"
+        className="pl-6 py-6 rounded-full ring-1 ring-gray-400 text-base"
         onChange={(e) => {
           const value = e.target.value;
           setSearchInput(value);
