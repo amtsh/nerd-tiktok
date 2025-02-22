@@ -1,6 +1,9 @@
 import React from "react";
 import Link from "next/link";
-import { headers } from "next/headers";
+// import { headers } from "next/headers";
+import { Input } from "@/components/ui/input";
+import { ArrowUp } from "lucide-react";
+import { Button } from "@/components/ui/button";
 
 const defaultTopics = [
   "Dark matter",
@@ -26,13 +29,15 @@ const gradients = [
 ];
 
 export default async function Home() {
-  const hostname = await headers().get("host");
-  const apiUrl = `https://${hostname}/api/books`;
-  const res = await fetch(apiUrl);
-  const data = await res.json();
-  const topicsFromOpenAi = data || [];
+  // const hostname = await headers().get("host");
+  // const apiUrl = `https://${hostname}/api/books`;
+  // const res = await fetch(apiUrl);
+  // const data = await res.json();
+  // const topicsFromOpenAi = data.error ? [] : data;
 
-  const topics = [...topicsFromOpenAi, ...defaultTopics];
+  // const topics = [...topicsFromOpenAi, ...defaultTopics];
+
+  const topics = [...defaultTopics];
 
   return (
     <>
@@ -47,8 +52,25 @@ export default async function Home() {
           {/* <DarkModeToggle /> */}
         </div>
 
+        <div className="px-2 md:min-h-0 min-h-[30vh] mt-64 md:block">
+          <div className="max-w-2xl mx-auto relative">
+            <Input
+              type="text"
+              placeholder="What do you want to learn today?"
+              className="w-full pr-12 py-6 focus-visible:ring-1"
+            />
+            <Button
+              className="absolute right-0 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-100 rounded-md transition-colors"
+              aria-label="Submit search"
+              disabled
+            >
+              <ArrowUp />
+            </Button>
+          </div>
+        </div>
+
         {/* start: apple books design */}
-        <div className="flex justify-center items-center min-h-screen my-32">
+        <div className="flex justify-center items-center min-h-screen my-16">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {topics.map((topic, index) => (
               <Link
