@@ -14,7 +14,7 @@ const InputForm = () => {
 
   return (
     <form
-      className="max-w-2xl mx-auto relative"
+      className="max-w-2xl mx-auto relative shadow-lg shadow-black/40 backdrop-blur-xl px-2"
       onSubmit={(e) => {
         e.preventDefault();
         handleOnSubmit(searchInput);
@@ -25,7 +25,7 @@ const InputForm = () => {
       <Input
         type="text"
         placeholder="What do you want to learn today?"
-        className="w-full pr-12 py-6 rounded-full focus-visible:ring-1"
+        className="pl-6 py-6 rounded-full ring-1 ring-gray-400"
         onChange={(e) => {
           const value = e.target.value;
           setSearchInput(value);
@@ -34,7 +34,7 @@ const InputForm = () => {
       />
       <Button
         type="submit"
-        className="absolute right-1 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-100 rounded-full transition-colors"
+        className="absolute right-3 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-100 rounded-full transition-colors"
         aria-label="Submit search"
         disabled={!searchInput}
       >

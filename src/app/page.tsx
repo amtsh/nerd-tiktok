@@ -40,24 +40,19 @@ export default async function Home() {
   const topics = [...defaultTopics];
 
   return (
-    <>
-      <div className="min-h-screen ">
-        <div className="fixed top-10 left-4 z-50">
-          <a
-            href="/"
-            className="text-2xl font-semibold drop-shadow-lg hover:opacity-80 transition-opacity"
-          >
-            Nerd Tiktok
-          </a>
-          {/* <DarkModeToggle /> */}
-        </div>
-
-        <div className="px-2 md:min-h-0 min-h-[30vh] mt-64 md:block">
-          <InputForm />
-        </div>
+    <div className="min-h-screen flex flex-col">
+      <div className="flex-grow">
+        <header className="flex flex-col items-center justify-center h-screen">
+          <h1 className="my-8 text-4xl font-bold mb-4 md:text-6xl text-center bg-gradient-to-r from-orange-400 via-pink-300 to-purple-400 bg-clip-text box-decoration-clone text-transparent">
+            Heal from doomscrolling
+          </h1>
+          <p className="mt-2 md:mt-4 text-xl md:text-2xl font-semibold text-gray-300">
+            ... with microlearning
+          </p>
+        </header>
 
         {/* start: apple books design */}
-        <div className="flex justify-center items-center min-h-screen my-16">
+        <div className="flex justify-center items-center min-h-screen mb-16">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {topics.map((topic, index) => (
               <Link
@@ -88,24 +83,24 @@ export default async function Home() {
           </div>
         </div>
         {/* end: apple books design */}
+
+        <div className="w-full flex justify-center my-24 md:my-8">
+          <span className="text-xs text-gray-400">
+            <a target="_blank" href="https://x.com/amiitshiinde">
+              DM feedback via{" "}
+              <Image
+                src={xIcon}
+                alt="X Logo"
+                className="inline-block w-4 h-4 ml-1 invert"
+              />
+            </a>
+          </span>
+        </div>
       </div>
 
-      <div className="w-full flex justify-center pb-4">
-        <span className="text-sm text-gray-400">Heal from doomscrolling</span>
+      <div className="fixed bottom-5 md:bottom-20 left-0 right-0">
+        <InputForm />
       </div>
-
-      <div className="w-full flex justify-center pb-4">
-        <span className="text-xs text-gray-400">
-          <a target="_blank" href="https://x.com/amiitshiinde">
-            DM feedback{" "}
-            <Image
-              src={xIcon}
-              alt="X Logo"
-              className="inline-block w-4 h-4 ml-1 invert"
-            />
-          </a>
-        </span>
-      </div>
-    </>
+    </div>
   );
 }
