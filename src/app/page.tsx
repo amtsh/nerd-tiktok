@@ -2,6 +2,8 @@ import React from "react";
 import Link from "next/link";
 import InputForm from "@/components/InputForm";
 // import { headers } from "next/headers";
+import Image from "next/image";
+import xIcon from "../../public/x.svg";
 
 const defaultTopics = [
   "Dark matter",
@@ -95,7 +97,12 @@ export default async function Home() {
       <div className="w-full flex justify-center pb-4">
         <span className="text-xs text-gray-400">
           <a target="_blank" href="https://x.com/amiitshiinde">
-            Send feedback on X/Twitter
+            DM feedback{" "}
+            <Image
+              src={xIcon}
+              alt="X Logo"
+              className="inline-block w-4 h-4 ml-1 invert"
+            />
           </a>
         </span>
       </div>
