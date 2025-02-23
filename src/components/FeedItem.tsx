@@ -31,7 +31,7 @@ export function FeedItem({ page, bookTitle }: FeedItemProps) {
             <div className="flex justify-right items-center space-x-2">
               <div className="flex flex-col">
                 <span className="text-sm font-medium">{page?.pageTitle}</span>
-                <span className="text-xs text-gray-400">
+                <span className="text-xs text-gray-400 capitalize">
                   {page.pageNum}. {bookTitle}
                 </span>
               </div>

@@ -13,8 +13,14 @@ export async function POST(request: Request) {
     );
   }
 
+  const freeModels = [
+    "google/gemini-2.0-flash-lite-preview-02-05:free",
+    "google/gemini-2.0-pro-exp-02-05:free",
+  ];
+  const paidModels = ["gpt-3.5-turbo"];
+
   try {
-    const result = await requestStreamAsObject(topic, "gpt-3.5-turbo");
+    const result = await requestStreamAsObject(topic, freeModels[0]);
     return result.toTextStreamResponse();
   } catch (error) {
     console.error("Error streaming text:", error);
