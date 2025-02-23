@@ -68,20 +68,5 @@ export default function Page() {
         </div>
       )}
     </div>
-
-    // <div className="text-white">
-    //   <button onClick={() => submit("meditation")}>Generate</button>
-
-    //   {object?.id && <div>{object.id}</div>}
-    //   {object?.topic && <div>{object.topic}</div>}
-
-    //   {object?.pages?.map((page, index) => (
-    //     <div key={index}>
-    //       <p>PageNumber: {page?.pageNum}</p>
-    //       <p>PageTitle: {page?.pageTitle}</p>
-    //       <p>PageContent: {page?.pageContent}</p>
-    //     </div>
-    //   ))}
-    // </div>
   );
 }

@@ -11,7 +11,7 @@ const InputForm = () => {
   const router = useRouter();
 
   const handleOnSubmit = (inputText: string) => {
-    router.push(`/stream-object?topic=${inputText}`);
+    router.push(`/feed?topic=${inputText}`);
   };
 
   return (
