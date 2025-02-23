@@ -25,12 +25,13 @@ const getOpenRouterClient = () => {
   return openRouterClient;
 };
 
+const beginnerFriendlyPrompt = `Use simple, concise language to ensure accessibility for all learners.`;
+
 const generatePrompt = (topic: string): string => {
-  return `Write an engaging, beginner-friendly content on the topic ${topic}, formatted in distinct pages.
+  return `Write an engaging content on the topic ${topic}, formatted in distinct pages.
 Each page should have a maximum of 6 sentences and a total of more than 10 pages but fewer than 20 pages.
-Use simple, concise language to ensure accessibility for all learners.
 Break down complex ideas into relatable, easy-to-grasp concepts, using everyday examples or analogies.
-Focus on making the content lively and interesting to keep the reader hooked.`;
+Focus on making the content lively, interesting and concise to keep the reader hooked.`;
 };
 
 export const requestStreamAsText = async (
