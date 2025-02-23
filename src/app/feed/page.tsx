@@ -1,55 +1,47 @@
 "use client";
 
-import { FeedItem } from "@/components/FeedItem";
+import { experimental_useObject as useObject } from "@ai-sdk/react";
+import { bookSchema } from "../api/stream-topic-as-object/schema";
 import { ChevronLeft, Loader2 } from "lucide-react";
-import { useCallback, useEffect, useRef } from "react";
-import { useFetchBook } from "../hooks/useFetchBook";
-import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
+import { FeedItem } from "@/components/FeedItem";
+import { useRouter, useSearchParams } from "next/navigation";
+import { Button } from "@/components/ui/button";
+import { useEffect, useState } from "react";
 
-export default function Feed() {
+export default function Page() {
+  const [isStreamingDone, setIsStreamingDone] = useState(false);
+
+  const { object, submit, isLoading, error } = useObject({
+    api: "/api/stream-topic-as-object",
+    schema: bookSchema,
+    onFinish: (event) => {
+      setIsStreamingDone(true);
+    },
+  });
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic");
-  const { pages, loading, error, fetchPages } = useFetchBook(topic || "");
-  const observerTarget = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    if (!topic) {
+    if (topic) {
+      submit(topic);
+    } else {
       router.push("/");
-      return;
     }
-    // Initial fetch when component mounts
-    fetchPages();
+
+    return () => {
+      // Cleanup function if needed
+    };
   }, []);
-
-  const handleObserver = useCallback(
-    (entries: IntersectionObserverEntry[]) => {
-      const [target] = entries;
-      if (target.isIntersecting && !loading) {
-        fetchPages();
-      }
-    },
-    [loading, fetchPages]
-  );
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(handleObserver, {
-      threshold: 0.1,
-      rootMargin: "100px",
-    });
-
-    if (observerTarget.current) {
-      observer.observe(observerTarget.current);
-    }
-
-    return () => observer.disconnect();
-  }, [handleObserver]);
 
   if (error) {
     return (
       <div className="h-screen w-full flex items-center justify-center">
-        <span className="text-red-500">Error: {error}</span>
+        <span className="text-red-500">Error: {error.message}</span>
+
+        <Button onClick={() => submit(topic)}>Try again</Button>
       </div>
     );
   }
@@ -65,16 +57,31 @@ export default function Feed() {
         </Link>
       </div>
 
-      {pages.map((page) => (
-        <FeedItem key={page.pageNum} page={page} />
+      {object?.pages?.map((page, index) => (
+        <FeedItem key={index} page={page} bookTitle={object?.topic} />
       ))}
-      <div ref={observerTarget} className="h-10 -mt-1" />
-      {loading && (
+
+      {(isLoading || !isStreamingDone) && (
         <div className="h-screen w-full flex items-center justify-center gap-2">
           <Loader2 className="h-4 w-4 animate-spin" />
-          <span className="text-sm">Loading...</span>
+          <span className="text-sm">Cooking...</span>
         </div>
       )}
     </div>
+
+    // <div className="text-white">
+    //   <button onClick={() => submit("meditation")}>Generate</button>
+
+    //   {object?.id && <div>{object.id}</div>}
+    //   {object?.topic && <div>{object.topic}</div>}
+
+    //   {object?.pages?.map((page, index) => (
+    //     <div key={index}>
+    //       <p>PageNumber: {page?.pageNum}</p>
+    //       <p>PageTitle: {page?.pageTitle}</p>
+    //       <p>PageContent: {page?.pageContent}</p>
+    //     </div>
+    //   ))}
+    // </div>
   );
 }
