@@ -42,19 +42,25 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <div className="flex-grow">
-        <Header />
-        <div className="flex flex-col items-center justify-center h-[95dvh]">
-          <h1 className="text-4xl font-bold mb-4 md:text-6xl text-center bg-gradient-to-r from-orange-400 via-pink-300 to-purple-400 bg-clip-text box-decoration-clone text-transparent">
-            Heal from doomscrolling
-          </h1>
-          <p className="mt-2 md:mt-4 text-xl md:text-2xl font-semibold text-gray-300">
-            ... with microlearning
-          </p>
+      <div className="">
+        <div className="flex flex-col h-dvh">
+          <Header />
+          <div className="flex-grow flex flex-col items-center justify-center">
+            <h1 className="text-4xl font-bold mb-4 md:text-6xl text-center bg-gradient-to-r from-orange-400 via-pink-300 to-purple-400 bg-clip-text box-decoration-clone text-transparent">
+              Heal from doomscrolling
+            </h1>
+            <p className="mt-2 md:mt-4 text-xl md:text-2xl font-semibold text-gray-300">
+              ... with microlearning
+            </p>
+          </div>
+
+          <div className="mb-8">
+            <InputForm />
+          </div>
         </div>
 
         {/* start: apple books design */}
-        <div className="flex justify-center items-center min-h-screen mb-16">
+        <div className="flex justify-center items-center min-h-screen my-16">
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {topics.map((topic, index) => (
               <Link
@@ -98,10 +104,6 @@ export default async function Home() {
             </a>
           </span>
         </div>
-      </div>
-
-      <div className="fixed bottom-5 md:bottom-20 left-0 right-0">
-        <InputForm />
       </div>
     </div>
   );
