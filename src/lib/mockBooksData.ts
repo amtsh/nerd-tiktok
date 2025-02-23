@@ -1,7 +1,7 @@
 import books from "./books.json";
 
 export interface Page {
-  extract: string;
+  pageContent: string;
   pageNum: number;
 }
 

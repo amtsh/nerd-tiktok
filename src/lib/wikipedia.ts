@@ -1,6 +1,6 @@
 export interface WikiArticle {
   title: string;
-  extract: string;
+  pageContent: string;
   pageid: number;
   url: string;
 }
@@ -35,9 +35,9 @@ export async function searchWikipediaArticles(topic: string): Promise<WikiArticl
   return Object.values(data.query.pages)
     .map((page: any) => ({
       title: page.title,
-      extract: page.extract,
+      pageContent: page.pageContent,
       pageid: page.pageid,
       url: page.canonicalurl,
     }))
-    .filter((article) => article.url && article.extract);
+    .filter((article) => article.url && article.pageContent);
 } 

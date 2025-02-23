@@ -4,12 +4,14 @@ import React, { useState } from "react";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { ArrowUp } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 const InputForm = () => {
   const [searchInput, setSearchInput] = useState("");
+  const router = useRouter();
 
   const handleOnSubmit = (inputText: string) => {
-    console.log(inputText);
+    router.push(`/stream-object?topic=${inputText}`);
   };
 
   return (

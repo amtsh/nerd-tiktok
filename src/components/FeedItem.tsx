@@ -1,23 +1,25 @@
 import React from "react";
-// import { Heart, MessageCircle } from "lucide-react";
 
 export interface Page {
-  title: string;
-  extract: string;
-  pageNum: number;
+  pageTitle?: string;
+  pageContent?: string;
+  pageNum?: number;
 }
 
 interface FeedItemProps {
-  page: Page;
+  bookTitle?: string;
+  page?: Page;
 }
 
-export function FeedItem({ page }: FeedItemProps) {
+export function FeedItem({ page, bookTitle }: FeedItemProps) {
+  if (!page) return null;
+
   return (
     <div className="h-screen w-full flex items-center justify-center snap-start relative">
       <div className="h-full w-full relative">
         <div className="absolute bottom-[calc(100px+env(safe-area-inset-bottom))] left-0 right-0 p-4">
           <ul className="text-lg md:text-xl opacity-90">
-            {page.extract.split(". ").map((sentence, index) => (
+            {page.pageContent?.split(". ").map((sentence, index) => (
               <li className="mb-4" key={index}>
                 {sentence}.
               </li>
@@ -28,9 +30,9 @@ export function FeedItem({ page }: FeedItemProps) {
           <div className="mt-8">
             <div className="flex justify-right items-center space-x-2">
               <div className="flex flex-col">
-                <span className="text-sm font-medium">{page.title}</span>
+                <span className="text-sm font-medium">{page?.pageTitle}</span>
                 <span className="text-xs text-gray-400">
-                  Page {page.pageNum}
+                  {page.pageNum}. {bookTitle}
                 </span>
               </div>
             </div>
