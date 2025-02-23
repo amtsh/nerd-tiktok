@@ -13,7 +13,7 @@ export default function ExploreTopics() {
   return (
     <div className="min-h-screen text-white">
       <div className="text-3xl font-bold p-4 mb-4 opacity-50">
-        Explore more topics
+        Explore topics
       </div>
       <nav className="border-b border-zinc-800 overflow-x-auto scrollbar-hide">
         <div className="flex items-center gap-8 px-4">
