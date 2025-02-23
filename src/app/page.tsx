@@ -5,6 +5,7 @@ import InputForm from "@/components/InputForm";
 import Image from "next/image";
 import xIcon from "../../public/x.svg";
 import { Header } from "@/components/Header";
+import ExploreTopics from "@/components/ExploreTopics";
 
 const defaultTopics = [
   "Dark matter",
@@ -60,7 +61,9 @@ export default async function Home() {
         </div>
 
         {/* start: apple books design */}
-        <div className="flex justify-center items-center min-h-screen my-16">
+
+        <div className="flex flex-col justify-center items-center min-h-screen my-16">
+          <div className="text-3xl font-bold p-4 mb-8 opacity-50">Trending</div>
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {topics.map((topic, index) => (
               <Link
@@ -91,6 +94,9 @@ export default async function Home() {
           </div>
         </div>
         {/* end: apple books design */}
+
+        {/* Explore Topics */}
+        <ExploreTopics />
 
         <div className="w-full flex justify-center my-24 md:my-8">
           <span className="text-xs text-gray-400">

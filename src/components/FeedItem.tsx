@@ -18,7 +18,7 @@ export function FeedItem({ page, bookTitle }: FeedItemProps) {
     <div className="h-screen w-full flex items-center justify-center snap-start relative">
       <div className="h-full w-full relative">
         <div className="absolute bottom-[calc(100px+env(safe-area-inset-bottom))] left-0 right-0 p-4">
-          <ul className="text-lg md:text-xl opacity-90">
+          <ul className="text-xl md:text-2xl opacity-90">
             {page.pageContent?.split(". ").map((sentence, index) => (
               <li className="mb-4" key={index}>
                 {sentence}.

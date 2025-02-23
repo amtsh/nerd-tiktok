@@ -34,7 +34,7 @@ export default function RootLayout({
               defaultTheme="dark"
               disableTransitionOnChange
             >
-              <div className="min-h-screen bg-black antialiased">
+              <div className="mx-auto sm:mx-16 md:mx-32 lg:mx-48 xl:mx-96 antialiased font-sans">
                 {children}
               </div>
             </ThemeProvider>
