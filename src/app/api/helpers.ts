@@ -49,7 +49,7 @@ export const requestStreamAsText = async (
 export const requestStreamAsObject = async (
   topic: string,
   llmModelName: string,
-  onFinish: (event: any) => void
+  onFinish?: (event: any) => void
 ) => {
   const openrouter = getOpenRouterClient();
 

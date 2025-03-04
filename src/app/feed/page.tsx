@@ -10,11 +10,30 @@ import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Content } from "@/components/Content";
 
+const fetcher = async (
+  input: RequestInfo | URL,
+  init?: RequestInit
+): Promise<Response> => {
+  console.log("fetching:", input);
+  const response = await fetch(input, {
+    ...init,
+    method: "POST",
+    headers: {
+      "Content-Type": "text/plain",
+    },
+    next: {
+      revalidate: 60 * 60 * 24, // 1 day
+    },
+  });
+  return response;
+};
+
 export default function Page() {
   const [isStreamingDone, setIsStreamingDone] = useState(false);
 
   const { object, submit, isLoading, error } = useObject({
     api: "/api/stream-topic-as-object",
+    fetch: fetcher,
     schema: bookSchema,
     onFinish: (event) => {
       setIsStreamingDone(true);
