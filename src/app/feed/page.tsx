@@ -8,6 +8,7 @@ import { FeedItem } from "@/components/FeedItem";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
+import { Content } from "@/components/Content";
 
 export default function Page() {
   const [isStreamingDone, setIsStreamingDone] = useState(false);
@@ -26,6 +27,7 @@ export default function Page() {
 
   useEffect(() => {
     if (topic) {
+      if (isLoading) return;
       submit(topic);
     } else {
       router.push("/");
@@ -48,25 +50,27 @@ export default function Page() {
 
   return (
     <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory">
-      <div className="top-4 left-4 fixed z-50">
-        <Link href="/">
-          <ChevronLeft
-            size={28}
-            className="absolute cursor-pointer opacity-50"
-          />
-        </Link>
-      </div>
-
-      {object?.pages?.map((page, index) => (
-        <FeedItem key={index} page={page} bookTitle={object?.topic} />
-      ))}
-
-      {(isLoading || !isStreamingDone) && (
-        <div className="h-screen w-full flex items-center justify-center gap-2">
-          <Loader2 className="h-4 w-4 animate-spin" />
-          <span className="text-sm">Cooking...</span>
+      <Content>
+        <div className="top-4 left-4 fixed z-50">
+          <Link href="/">
+            <ChevronLeft
+              size={28}
+              className="absolute cursor-pointer opacity-50"
+            />
+          </Link>
         </div>
-      )}
+
+        {object?.pages?.map((page, index) => (
+          <FeedItem key={index} page={page} bookTitle={object?.topic} />
+        ))}
+
+        {(isLoading || !isStreamingDone) && (
+          <div className="h-screen w-full flex items-center justify-center gap-2">
+            <Loader2 className="h-4 w-4 animate-spin" />
+            <span className="text-sm">Cooking...</span>
+          </div>
+        )}
+      </Content>
     </div>
   );
 }

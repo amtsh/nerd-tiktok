@@ -8,7 +8,7 @@ const getTopicFromRequest = (request: Request): string | null => {
 
 export async function POST(request: Request) {
   const { prompt: topic } = await request.json();
-  console.log("topic:", topic);
+  console.log("topic received on server:", topic);
 
   if (!topic) {
     return NextResponse.json(

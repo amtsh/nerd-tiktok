@@ -48,7 +48,8 @@ export const requestStreamAsText = async (
 
 export const requestStreamAsObject = async (
   topic: string,
-  llmModelName: string
+  llmModelName: string,
+  onFinish: (event: any) => void
 ) => {
   const openrouter = getOpenRouterClient();
 
@@ -57,5 +58,6 @@ export const requestStreamAsObject = async (
     system: `You are helpful assistant and expert in the topic ${topic}`,
     prompt: generatePrompt(topic),
     schema: bookSchema,
+    onFinish,
   });
 };

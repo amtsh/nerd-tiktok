@@ -30,9 +30,11 @@ export function FeedItem({ page, bookTitle }: FeedItemProps) {
           <div className="mt-8">
             <div className="flex justify-right items-center space-x-2">
               <div className="flex flex-col">
-                <span className="text-sm font-medium">{page?.pageTitle}</span>
+                <span className="text-sm text-gray-400 font-medium">
+                  {page.pageNum}. {page?.pageTitle}
+                </span>
                 <span className="text-xs text-gray-400 capitalize">
-                  {page.pageNum}. {bookTitle}
+                  {bookTitle}
                 </span>
               </div>
             </div>
