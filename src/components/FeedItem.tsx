@@ -33,7 +33,7 @@ export function FeedItem({ page, bookTitle }: FeedItemProps) {
                 <span className="text-sm text-gray-400 font-medium">
                   {page.pageNum}. {page?.pageTitle}
                 </span>
-                <span className="text-xs text-gray-400 capitalize ml-3">
+                <span className="text-xs text-gray-400 capitalize">
                   {bookTitle}
                 </span>
               </div>
