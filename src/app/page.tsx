@@ -20,7 +20,7 @@ export default async function Home() {
       <div className="min-h-screen flex flex-col">
         <div className="">
           <div className="flex flex-col h-dvh">
-            <Header />
+            {/* <Header /> */}
             <div className="flex-grow flex flex-col items-center justify-center">
               <h1 className="text-4xl font-bold mb-4 md:text-6xl text-center bg-gradient-to-r from-orange-400 via-pink-300 to-purple-400 bg-clip-text box-decoration-clone text-transparent">
                 Heal from doomscrolling

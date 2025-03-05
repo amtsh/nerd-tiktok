@@ -30,7 +30,7 @@ const beginnerFriendlyPrompt = `Use simple, concise language to ensure accessibi
 const generatePrompt = (topic: string): string => {
   return `Write an engaging content on the topic ${topic}, formatted in distinct pages.
 Each page should have a maximum of 6 sentences and a total of more than 10 pages but fewer than 20 pages.
-Break down complex ideas into relatable, easy-to-grasp concepts, using everyday examples or analogies.
+Break down complex ideas into relatable, easy-to-grasp concepts.
 Focus on making the content lively, interesting and concise to keep the reader hooked.`;
 };
 
