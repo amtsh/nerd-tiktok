@@ -14,7 +14,6 @@ const fetcher = async (
   input: RequestInfo | URL,
   init?: RequestInit
 ): Promise<Response> => {
-  console.log("fetching:", input);
   const response = await fetch(input, {
     ...init,
     method: "POST",
