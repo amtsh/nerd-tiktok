@@ -9,6 +9,7 @@ import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
 import { Content } from "@/components/Content";
+import { z } from "zod";
 
 const fetcher = async (
   input: RequestInfo | URL,
@@ -29,6 +30,9 @@ const fetcher = async (
 
 export default function Page() {
   const [isStreamingDone, setIsStreamingDone] = useState(false);
+  const [mockData, setMockData] = useState<z.infer<typeof bookSchema> | null>(
+    null
+  );
 
   const { object, submit, isLoading, error } = useObject({
     api: "/api/stream-topic-as-object",
@@ -39,14 +43,23 @@ export default function Page() {
     },
   });
 
+  const fetchMockData = async () => {
+    const response = await fetch("/api/mock-api");
+    const data = await response.json();
+    setMockData(data);
+    setIsStreamingDone(true);
+  };
+
   const router = useRouter();
   const searchParams = useSearchParams();
   const topic = searchParams.get("topic");
 
   useEffect(() => {
     if (topic) {
-      if (isLoading) return;
-      submit(topic);
+      // if (isLoading) return;
+      // submit(topic);
+
+      fetchMockData(); // Fetch mock data instead of submitting
     } else {
       router.push("/");
     }
@@ -80,6 +93,10 @@ export default function Page() {
 
         {object?.pages?.map((page, index) => (
           <FeedItem key={index} page={page} bookTitle={object?.topic} />
+        ))}
+
+        {mockData?.pages?.map((page, index) => (
+          <FeedItem key={index} page={page} bookTitle={mockData?.topic} />
         ))}
 
         {(isLoading || !isStreamingDone) && (
