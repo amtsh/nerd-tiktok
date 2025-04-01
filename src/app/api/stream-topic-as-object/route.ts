@@ -13,10 +13,7 @@ export async function POST(request: Request) {
     );
   }
 
-  const freeModels = [
-    "google/gemini-2.0-flash-lite-preview-02-05:free",
-    "google/gemini-2.0-pro-exp-02-05:free",
-  ];
+  const freeModels = ["google/gemini-2.5-pro-exp-03-25:free"];
   const paidModels = ["gpt-3.5-turbo"];
 
   try {
