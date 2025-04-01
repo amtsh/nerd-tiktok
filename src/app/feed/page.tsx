@@ -7,7 +7,7 @@ import Link from "next/link";
 import { FeedItem } from "@/components/FeedItem";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Content } from "@/components/Content";
 import { z } from "zod";
 
@@ -33,6 +33,7 @@ export default function Page() {
   const [mockData, setMockData] = useState<z.infer<typeof bookSchema> | null>(
     null
   );
+  const hasRequested = useRef(false);
 
   const { object, submit, isLoading, error } = useObject({
     api: "/api/stream-topic-as-object",
@@ -55,11 +56,17 @@ export default function Page() {
   const topic = searchParams.get("topic");
 
   useEffect(() => {
-    if (topic) {
-      // if (isLoading) return;
-      // submit(topic);
+    if (hasRequested.current) return;
+    hasRequested.current = true;
 
-      fetchMockData(); // Fetch mock data instead of submitting
+    if (topic === "mock") {
+      fetchMockData();
+      return;
+    }
+
+    if (topic) {
+      if (isLoading) return;
+      submit(topic);
     } else {
       router.push("/");
     }
@@ -91,12 +98,12 @@ export default function Page() {
           </Link>
         </div>
 
-        {object?.pages?.map((page, index) => (
-          <FeedItem key={index} page={page} bookTitle={object?.topic} />
-        ))}
-
         {mockData?.pages?.map((page, index) => (
           <FeedItem key={index} page={page} bookTitle={mockData?.topic} />
+        ))}
+
+        {object?.pages?.map((page, index) => (
+          <FeedItem key={index} page={page} bookTitle={object?.topic} />
         ))}
 
         {(isLoading || !isStreamingDone) && (
