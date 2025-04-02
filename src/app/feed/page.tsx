@@ -106,6 +106,12 @@ export default function Page() {
           <FeedItem key={index} page={page} bookTitle={object?.topic} />
         ))}
 
+        {!object && isStreamingDone && (
+          <div className="h-screen w-full flex items-center justify-center">
+            <span className="text-sm">Service is down</span>
+          </div>
+        )}
+
         {(isLoading || !isStreamingDone) && (
           <div className="h-screen w-full flex items-center justify-center gap-2">
             <Loader2 className="h-4 w-4 animate-spin" />
