@@ -53,20 +53,21 @@ export default function Page() {
 
   const router = useRouter();
   const searchParams = useSearchParams();
-  const topic = searchParams.get("topic");
+  const query = searchParams.get("query");
+  const mode = searchParams.get("mode");
 
   useEffect(() => {
     if (hasRequested.current) return;
     hasRequested.current = true;
 
-    if (topic === "mock") {
+    if (query === "mock") {
       fetchMockData();
       return;
     }
 
-    if (topic) {
+    if (query) {
       if (isLoading) return;
-      submit(topic);
+      submit({ query, mode });
     } else {
       router.push("/");
     }
@@ -81,7 +82,7 @@ export default function Page() {
       <div className="h-screen w-full flex items-center justify-center">
         <span className="text-red-500">Error: {error.message}</span>
 
-        <Button onClick={() => submit(topic)}>Try again</Button>
+        <Button onClick={() => submit(query)}>Try again</Button>
       </div>
     );
   }

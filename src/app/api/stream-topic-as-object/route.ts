@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import { requestStreamAsObject } from "../helpers";
-
+import { Mode } from "@/lib/types";
 export async function POST(request: Request) {
-  const query = await request.json();
+  const { query, mode } = await request.json();
+  console.log("query", query);
+  console.log("mode", mode);
 
   if (!query) {
     return NextResponse.json(
@@ -20,7 +22,11 @@ export async function POST(request: Request) {
   const paidModels = ["gpt-3.5-turbo"];
 
   try {
-    const result = await requestStreamAsObject(query, freeModels[0]);
+    const result = await requestStreamAsObject(
+      query as string,
+      mode as Mode,
+      freeModels[0]
+    );
     return result.toTextStreamResponse();
   } catch (error) {
     console.error("Error streaming text:", error);
