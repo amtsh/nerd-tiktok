@@ -2,8 +2,8 @@ import React from "react";
 import InputForm from "@/components/InputForm";
 import Image from "next/image";
 import xIcon from "../../public/x.svg";
-import { Header } from "@/components/Header";
-import ExploreTopics from "@/components/ExploreTopics";
+// import { Header } from "@/components/Header";
+// import ExploreTopics from "@/components/ExploreTopics";
 import { Content } from "@/components/Content";
 
 export default async function Home() {
@@ -36,9 +36,9 @@ export default async function Home() {
           </div>
 
           {/* Explore Topics */}
-          <div className="my-32">
+          {/* <div className="my-32">
             <ExploreTopics />
-          </div>
+          </div> */}
 
           <div className="w-full flex justify-center my-24 md:my-8">
             <span className="text-xs text-gray-400">

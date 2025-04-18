@@ -2,22 +2,25 @@ import { NextResponse } from "next/server";
 import { requestStreamAsObject } from "../helpers";
 
 export async function POST(request: Request) {
-  const topic = await request.json();
+  const query = await request.json();
 
-  if (!topic) {
+  if (!query) {
     return NextResponse.json(
       {
-        error: "topic is required",
+        error: "query is required",
       },
       { status: 400 }
     );
   }
 
-  const freeModels = ["google/gemini-2.5-pro-exp-03-25:free"];
+  const freeModels = [
+    "google/gemini-2.0-flash-exp:free",
+    "google/gemini-2.5-pro-exp-03-25:free",
+  ];
   const paidModels = ["gpt-3.5-turbo"];
 
   try {
-    const result = await requestStreamAsObject(topic, freeModels[0]);
+    const result = await requestStreamAsObject(query, freeModels[0]);
     return result.toTextStreamResponse();
   } catch (error) {
     console.error("Error streaming text:", error);

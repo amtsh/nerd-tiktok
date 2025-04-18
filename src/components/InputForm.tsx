@@ -11,7 +11,7 @@ const InputForm = () => {
   const router = useRouter();
 
   const handleOnSubmit = (inputText: string) => {
-    router.push(`/feed?topic=${inputText}`);
+    router.push(`/feed?query=${inputText}`);
   };
 
   return (
