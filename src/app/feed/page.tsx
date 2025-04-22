@@ -90,14 +90,15 @@ export default function Page() {
   return (
     <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory">
       <Content>
-        <div className="top-4 left-4 fixed z-50">
+        {/* Back button */}
+        {/* <div className="top-4 left-4 fixed z-50">
           <Link href="/">
             <ChevronLeft
               size={28}
               className="absolute cursor-pointer opacity-50"
             />
           </Link>
-        </div>
+        </div> */}
 
         {mockData?.pages?.map((page, index) => (
           <FeedItem key={index} page={page} bookTitle={mockData?.topic} />
