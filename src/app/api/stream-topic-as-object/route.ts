@@ -16,10 +16,8 @@ export async function POST(request: Request) {
   }
 
   const freeModels = [
-    "google/gemini-2.0-flash-exp:free",
-    "google/gemini-2.5-pro-exp-03-25:free",
+    "openrouter/free",
   ];
-  const paidModels = ["gpt-3.5-turbo"];
 
   try {
     const result = await requestStreamAsObject(
