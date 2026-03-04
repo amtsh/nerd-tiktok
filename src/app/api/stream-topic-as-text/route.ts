@@ -2,11 +2,6 @@ import { NextResponse } from "next/server";
 import { requestStreamAsText } from "../helpers";
 import { Mode } from "@/lib/types";
 
-const getTopicFromRequest = (request: Request): string | null => {
-  const { searchParams } = new URL(request.url);
-  return searchParams.get("query");
-};
-
 export async function POST(request: Request) {
   const { query, mode } = await request.json();
   console.log("query received on server:", query);

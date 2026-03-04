@@ -1,6 +1,5 @@
 import { NextResponse } from "next/server";
 import { mockBooksData } from "@/lib/mockBooksData";
-// import { searchWikipediaArticles } from "@/lib/wikipedia";
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);
@@ -17,7 +16,6 @@ export async function GET(request: Request) {
   }
 
   try {
-    // const articles = await searchWikipediaArticles(topic);
     const book = await mockBooksData(topic);
 
     if (!book) {

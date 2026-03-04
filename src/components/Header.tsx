@@ -16,7 +16,6 @@ export const Header: React.FC<HeaderProps> = ({ bgColor, isLoggedIn }) => {
             className="rounded-full transition-colors opacity-80"
           >
             <GalleryVerticalEnd className="h-8 w-8 mr-4" />
-            {/* <span className="text-lg font-bold">nerd tiktok.</span> */}
           </Button>
         </a>
       </div>

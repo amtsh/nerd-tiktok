@@ -2,8 +2,7 @@
 
 import { experimental_useObject as useObject } from "@ai-sdk/react";
 import { bookSchema } from "../api/stream-topic-as-object/schema";
-import { ChevronLeft, Loader2 } from "lucide-react";
-import Link from "next/link";
+import { Loader2 } from "lucide-react";
 import { FeedItem } from "@/components/FeedItem";
 import { useRouter, useSearchParams } from "next/navigation";
 import { Button } from "@/components/ui/button";
@@ -82,7 +81,7 @@ export default function Page() {
       <div className="h-screen w-full flex items-center justify-center">
         <span className="text-red-500">Error: {error.message}</span>
 
-        <Button onClick={() => submit(query)}>Try again</Button>
+        <Button onClick={() => submit({ query, mode })}>Try again</Button>
       </div>
     );
   }
@@ -90,16 +89,6 @@ export default function Page() {
   return (
     <div className="h-screen w-full overflow-y-scroll snap-y snap-mandatory">
       <Content>
-        {/* Back button */}
-        {/* <div className="top-4 left-4 fixed z-50">
-          <Link href="/">
-            <ChevronLeft
-              size={28}
-              className="absolute cursor-pointer opacity-50"
-            />
-          </Link>
-        </div> */}
-
         {mockData?.pages?.map((page, index) => (
           <FeedItem key={index} page={page} bookTitle={mockData?.topic} />
         ))}
