@@ -23,21 +23,31 @@ const InputForm = ({ mode, onModeChange }: InputFormProps) => {
 
   return (
     <form
-      className="max-w-2xl mx-auto shadow-lg shadow-black/40 backdrop-blur-xl px-2 transition-[box-shadow]"
       onSubmit={(e) => {
         e.preventDefault();
         handleOnSubmit(searchInput);
-
         setSearchInput("");
       }}
     >
-      <>
+      <Input
+        type="text"
+        placeholder={
+          mode === Mode.LEARN
+            ? "Learn something new today."
+            : "Read a new story today."
+        }
+        className="w-full border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-zinc-600 px-0 py-0 mb-4 h-auto"
+        onChange={(e) => setSearchInput(e.target.value)}
+        value={searchInput}
+        autoFocus
+      />
+
+      <div className="flex items-center justify-between gap-3">
         <Tabs
           value={mode}
           onValueChange={(value: string) => onModeChange(value as Mode)}
-          className="mb-4"
         >
-          <TabsList className="rounded-full">
+          <TabsList className="rounded-full bg-zinc-800">
             <TabsTrigger value="learn" type="button" className="rounded-full">
               Learn
             </TabsTrigger>
@@ -46,30 +56,14 @@ const InputForm = ({ mode, onModeChange }: InputFormProps) => {
             </TabsTrigger>
           </TabsList>
         </Tabs>
-      </>
-      <div className="relative">
-        <Input
-          type="text"
-          placeholder={`${
-            mode === Mode.LEARN
-              ? "Learn something new today."
-              : "Read a new story today."
-          }`}
-          className="pl-6 py-6 rounded-full ring-1 ring-gray-100 border-shadow text-base"
-          onChange={(e) => {
-            const value = e.target.value;
-            setSearchInput(value);
-          }}
-          value={searchInput}
-          autoFocus
-        />
+
         <Button
           type="submit"
-          className="absolute right-1 top-1/2 -translate-y-1/2 p-2 pl-2.5 pr-2 hover:bg-gray-100 rounded-full transition-[transform,opacity,background-color]"
+          className="rounded-full h-10 w-10 shrink-0 shadow-lg shadow-black/40 transition-[transform,opacity,background-color] disabled:opacity-30"
           aria-label="Submit search"
           disabled={!searchInput}
         >
-          <ArrowUp className="ml-0.5" />
+          <ArrowUp className="h-5 w-5" />
         </Button>
       </div>
     </form>

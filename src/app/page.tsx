@@ -10,26 +10,26 @@ export default async function Home() {
       <div className="min-h-screen flex flex-col">
         <div className="">
           <div className="flex flex-col h-dvh">
-            <div className="flex-grow flex flex-col items-center justify-center gap-4 px-4">
-              <span className="text-xs uppercase tracking-widest font-bold text-emerald-400 border border-white/15 bg-white/[0.06] px-3 py-1 rounded-full">
+            <div className="flex-grow flex flex-col items-center justify-center gap-4 px-6 sm:px-8 w-full min-w-0 overflow-visible">
+              <span className="text-[10px] uppercase tracking-widest font-semibold text-emerald-400 border border-white/15 bg-white/[0.06] px-2 py-0.5 rounded-full">
                 Microlearning
               </span>
-              <h1 className="text-5xl md:text-7xl font-bold text-center text-balance text-white leading-tight tracking-tight">
+              <h1 className="text-2xl md:text-4xl font-bold text-center text-balance text-white leading-tight tracking-tight w-full max-w-2xl">
                 Read any topic.
                 <br />
-                <span className="bg-gradient-to-r from-orange-400 via-pink-300 to-purple-400 bg-clip-text text-transparent">
+                <span className="inline-block bg-gradient-to-r from-orange-400 via-pink-300 to-purple-400 bg-clip-text text-transparent px-1">
                   on a scrolling feed.
                 </span>
               </h1>
               <p className="text-sm text-gray-500 text-center text-balance max-w-xs">
-                Turn endless scrolling into effortless learning.
+                Learn something real.
               </p>
             </div>
 
             <HomeForm />
           </div>
 
-          <div className="w-full flex justify-center my-24 md:my-8">
+          {/* <div className="w-full flex justify-center my-24 md:my-8">
             <span className="text-xs text-gray-400">
               <a target="_blank" href="https://x.com/amiitshiinde">
                 DM feedback via{" "}
@@ -40,7 +40,7 @@ export default async function Home() {
                 />
               </a>
             </span>
-          </div>
+          </div> */}
         </div>
       </div>
     </Content>
