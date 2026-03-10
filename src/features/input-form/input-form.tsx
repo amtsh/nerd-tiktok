@@ -1,19 +1,19 @@
 "use client";
 
 import React, { useState } from "react";
-import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
+import { Input } from "@/ui/input";
+import { Button } from "@/ui/button";
 import { ArrowUp } from "lucide-react";
 import { useRouter } from "next/navigation";
-import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Mode } from "@/lib/types";
+import { Tabs, TabsList, TabsTrigger } from "@/ui/tabs";
+import { Mode } from "@/shared/types";
 
 interface InputFormProps {
   mode: Mode;
   onModeChange: (mode: Mode) => void;
 }
 
-const InputForm = ({ mode, onModeChange }: InputFormProps) => {
+export function InputForm({ mode, onModeChange }: InputFormProps) {
   const [searchInput, setSearchInput] = useState("");
   const router = useRouter();
 
@@ -59,15 +59,14 @@ const InputForm = ({ mode, onModeChange }: InputFormProps) => {
 
         <Button
           type="submit"
-          className="rounded-full h-10 w-10 shrink-0 shadow-lg shadow-black/40 transition-[transform,opacity,background-color] disabled:opacity-30"
+          size="icon"
+          className="rounded-full shrink-0 shadow-lg shadow-black/40 transition-[transform,opacity,background-color] disabled:opacity-30"
           aria-label="Submit search"
           disabled={!searchInput}
         >
-          <ArrowUp className="h-5 w-5" />
+          <ArrowUp className="!h-5 !w-5" />
         </Button>
       </div>
     </form>
   );
-};
-
-export default InputForm;
+}

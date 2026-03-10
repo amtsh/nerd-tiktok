@@ -4,7 +4,7 @@ import {
 } from "@openrouter/ai-sdk-provider";
 import { streamObject } from "ai";
 import { bookSchema } from "./stream-topic-as-object/schema";
-import { Mode } from "@/lib/types";
+import { Mode } from "@/shared/types";
 
 let openRouterClient: OpenRouterProvider | null = null;
 

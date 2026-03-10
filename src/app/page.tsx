@@ -1,6 +1,6 @@
 import React from "react";
-import { Content } from "@/components/Content";
-import { HomeForm } from "@/components/HomeForm";
+import { Content } from "@/ui/content";
+import { HomeForm } from "@/features/home-form";
 
 export default async function Home() {
   return (

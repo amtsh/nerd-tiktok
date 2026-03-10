@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { requestStreamAsObject } from "../helpers";
-import { Mode } from "@/lib/types";
+import { Mode } from "@/shared/types";
 export async function POST(request: Request) {
   const { query, mode } = await request.json();
   console.log("query", query);

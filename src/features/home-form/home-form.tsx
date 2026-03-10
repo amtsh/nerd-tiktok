@@ -1,9 +1,9 @@
 "use client";
 
 import { useState } from "react";
-import { Mode } from "@/lib/types";
-import { CuriousTopics } from "@/components/CuriousTopics";
-import InputForm from "@/components/InputForm";
+import { Mode } from "@/shared/types";
+import { CuriousTopics } from "@/features/curious-topics";
+import { InputForm } from "@/features/input-form";
 
 export function HomeForm() {
   const [mode, setMode] = useState<Mode>(Mode.LEARN);

@@ -1,10 +1,10 @@
 "use client";
 
-import { tabContent, storyTopics } from "@/lib/topicsData";
+import { tabContent, storyTopics } from "@/shared/data";
 import { ArrowRight, RefreshCw, Search } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
-import { Mode } from "@/lib/types";
+import { Mode } from "@/shared/types";
 
 const TOPIC_COUNT = 7;
 

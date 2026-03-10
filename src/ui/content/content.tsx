@@ -4,10 +4,10 @@ interface ContentProps {
   children: React.ReactNode;
 }
 
-export const Content: React.FC<ContentProps> = ({ children }) => {
+export function Content({ children }: ContentProps) {
   return (
     <div className="mx-auto w-full max-w-2xl px-4 sm:px-6 font-sans">
       {children}
     </div>
   );
-};
+}
