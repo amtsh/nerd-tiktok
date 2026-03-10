@@ -10,12 +10,19 @@ export default async function Home() {
       <div className="min-h-screen flex flex-col">
         <div className="">
           <div className="flex flex-col h-dvh">
-            <div className="flex-grow flex flex-col items-center justify-center">
-              <h1 className="text-4xl font-bold mb-4 md:text-6xl text-center text-balance bg-gradient-to-r from-orange-400 via-pink-300 to-purple-400 bg-clip-text box-decoration-clone text-transparent">
-                Heal from doomscrolling
+            <div className="flex-grow flex flex-col items-center justify-center gap-4 px-4">
+              <span className="text-xs uppercase tracking-widest font-bold text-emerald-400 border border-white/15 bg-white/[0.06] px-3 py-1 rounded-full">
+                Microlearning
+              </span>
+              <h1 className="text-5xl md:text-7xl font-bold text-center text-balance text-white leading-tight tracking-tight">
+                Read any topic.
+                <br />
+                <span className="bg-gradient-to-r from-orange-400 via-pink-300 to-purple-400 bg-clip-text text-transparent">
+                  on a scrolling feed.
+                </span>
               </h1>
-              <p className="mt-2 md:mt-4 text-xl md:text-2xl font-semibold text-gray-300 text-balance">
-                ... with microlearning
+              <p className="text-sm text-gray-500 text-center text-balance max-w-xs">
+                Turn endless scrolling into effortless learning.
               </p>
             </div>
 

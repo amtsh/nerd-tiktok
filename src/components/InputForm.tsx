@@ -38,10 +38,18 @@ const InputForm = ({ mode, onModeChange }: InputFormProps) => {
           className="mb-4"
         >
           <TabsList className="rounded-full">
-            <TabsTrigger value="learn" className="text-xs rounded-full">
+            <TabsTrigger
+              value="learn"
+              type="button"
+              className="text-xs rounded-full"
+            >
               Learn
             </TabsTrigger>
-            <TabsTrigger value="story" className="text-xs rounded-full">
+            <TabsTrigger
+              value="story"
+              type="button"
+              className="text-xs rounded-full"
+            >
               Story
             </TabsTrigger>
           </TabsList>
@@ -61,6 +69,7 @@ const InputForm = ({ mode, onModeChange }: InputFormProps) => {
             setSearchInput(value);
           }}
           value={searchInput}
+          autoFocus
         />
         <Button
           type="submit"
