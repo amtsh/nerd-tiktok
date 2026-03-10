@@ -12,7 +12,7 @@ import { z } from "zod";
 
 const fetcher = async (
   input: RequestInfo | URL,
-  init?: RequestInit
+  init?: RequestInit,
 ): Promise<Response> => {
   const response = await fetch(input, {
     ...init,
@@ -30,7 +30,7 @@ const fetcher = async (
 export default function Page() {
   const [isStreamingDone, setIsStreamingDone] = useState(false);
   const [mockData, setMockData] = useState<z.infer<typeof bookSchema> | null>(
-    null
+    null,
   );
   const hasRequested = useRef(false);
 
@@ -79,9 +79,9 @@ export default function Page() {
   if (error) {
     return (
       <div className="h-screen w-full flex items-center justify-center">
-        <span className="text-red-500">Error: {error.message}</span>
-
-        <Button onClick={() => submit({ query, mode })}>Try again</Button>
+        <Button onClick={() => submit({ query, mode })} className="w-48">
+          Try again
+        </Button>
       </div>
     );
   }
@@ -98,8 +98,11 @@ export default function Page() {
         ))}
 
         {!object && isStreamingDone && (
-          <div className="h-screen w-full flex items-center justify-center">
-            <span className="text-sm">Service is down</span>
+          <div className="h-screen w-full flex items-center justify-center flex-col gap-4">
+            <span className="text-sm text-balance">Service is down</span>
+            <Button onClick={() => submit({ query, mode })} className="w-48 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
+              Try again
+            </Button>
           </div>
         )}
 

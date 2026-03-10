@@ -6,7 +6,7 @@ interface ContentProps {
 
 export const Content: React.FC<ContentProps> = ({ children }) => {
   return (
-    <div className="mx-auto sm:mx-16 md:mx-32 lg:mx-48 xl:mx-96 antialiased font-sans">
+    <div className="mx-auto sm:mx-16 md:mx-32 lg:mx-48 xl:mx-96 font-sans">
       {children}
     </div>
   );

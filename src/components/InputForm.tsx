@@ -8,9 +8,13 @@ import { useRouter } from "next/navigation";
 import { Tabs, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Mode } from "@/lib/types";
 
-const InputForm = () => {
+interface InputFormProps {
+  mode: Mode;
+  onModeChange: (mode: Mode) => void;
+}
+
+const InputForm = ({ mode, onModeChange }: InputFormProps) => {
   const [searchInput, setSearchInput] = useState("");
-  const [mode, setMode] = useState<Mode>(Mode.LEARN);
   const router = useRouter();
 
   const handleOnSubmit = (inputText: string) => {
@@ -19,7 +23,7 @@ const InputForm = () => {
 
   return (
     <form
-      className="max-w-2xl mx-auto shadow-lg shadow-black/40 backdrop-blur-xl px-2"
+      className="max-w-2xl mx-auto shadow-lg shadow-black/40 backdrop-blur-xl px-2 transition-[box-shadow]"
       onSubmit={(e) => {
         e.preventDefault();
         handleOnSubmit(searchInput);
@@ -30,7 +34,7 @@ const InputForm = () => {
       <>
         <Tabs
           value={mode}
-          onValueChange={(value: string) => setMode(value as Mode)}
+          onValueChange={(value: string) => onModeChange(value as Mode)}
           className="mb-4"
         >
           <TabsList className="rounded-full">
@@ -49,9 +53,9 @@ const InputForm = () => {
           placeholder={`${
             mode === Mode.LEARN
               ? "Learn something new today."
-              : "What type of story you want to read today?"
+              : "Read a new story today."
           }`}
-          className="pl-6 py-6 rounded-full ring-1 ring-gray-400 text-base"
+          className="pl-6 py-6 rounded-full ring-1 ring-gray-100 border-shadow text-base"
           onChange={(e) => {
             const value = e.target.value;
             setSearchInput(value);
@@ -60,11 +64,11 @@ const InputForm = () => {
         />
         <Button
           type="submit"
-          className="absolute right-1 top-1/2 -translate-y-1/2 p-2 hover:bg-gray-100 rounded-full transition-colors"
+          className="absolute right-1 top-1/2 -translate-y-1/2 p-2 pl-2.5 pr-2 hover:bg-gray-100 rounded-full transition-[transform,opacity,background-color]"
           aria-label="Submit search"
           disabled={!searchInput}
         >
-          <ArrowUp />
+          <ArrowUp className="ml-0.5" />
         </Button>
       </div>
     </form>
