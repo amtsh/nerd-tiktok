@@ -60,11 +60,12 @@ export function InputForm({ mode, onModeChange }: InputFormProps) {
         <Button
           type="submit"
           size="icon"
-          className="rounded-full shrink-0 shadow-lg shadow-black/40 transition-[transform,opacity,background-color] disabled:opacity-30"
+          variant="ghost"
+          className="rounded-full shrink-0 bg-zinc-800 border border-white/20 shadow-[0_6px_20px_rgba(0,0,0,0.5),inset_0_1px_0_rgba(255,255,255,0.12),inset_0_-2px_4px_rgba(0,0,0,0.5)] text-white/80 hover:bg-zinc-700 hover:text-white transition-all disabled:opacity-25"
           aria-label="Submit search"
           disabled={!searchInput}
         >
-          <ArrowUp className="!h-5 !w-5" />
+          <ArrowUp className="h-5 w-5" />
         </Button>
       </div>
     </form>
