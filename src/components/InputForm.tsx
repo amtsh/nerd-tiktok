@@ -38,18 +38,10 @@ const InputForm = ({ mode, onModeChange }: InputFormProps) => {
           className="mb-4"
         >
           <TabsList className="rounded-full">
-            <TabsTrigger
-              value="learn"
-              type="button"
-              className="text-xs rounded-full"
-            >
+            <TabsTrigger value="learn" type="button" className="rounded-full">
               Learn
             </TabsTrigger>
-            <TabsTrigger
-              value="story"
-              type="button"
-              className="text-xs rounded-full"
-            >
+            <TabsTrigger value="story" type="button" className="rounded-full">
               Story
             </TabsTrigger>
           </TabsList>
