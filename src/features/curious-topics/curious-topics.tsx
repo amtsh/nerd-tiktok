@@ -6,7 +6,7 @@ import { useRouter } from "next/navigation";
 import { useCallback, useMemo, useState } from "react";
 import { Mode } from "@/shared/types";
 
-const TOPIC_COUNT = 7;
+const TOPIC_COUNT = 21;
 
 function getRandomTopics(mode: Mode) {
   const pool =
@@ -32,7 +32,7 @@ export function CuriousTopics({ mode }: CuriousTopicsProps) {
     <div className="px-4 pt-5 pb-3">
       <div className="flex items-center justify-between mb-3 text-balance">
         <span className="text-xs font-semibold text-zinc-500 uppercase tracking-widest">
-          Explore
+          Topics
         </span>
         <button
           onClick={handleRefresh}
