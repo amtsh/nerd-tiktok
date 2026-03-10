@@ -71,16 +71,24 @@ export default function Page() {
       router.push("/");
     }
 
-    return () => {
-      // Cleanup function if needed
-    };
   }, []);
 
   if (error) {
     return (
       <div className="h-screen w-full flex items-center justify-center">
-        <Button onClick={() => submit({ query, mode })} className="w-48">
-          Try again
+        <Button
+          onClick={() => submit({ query, mode })}
+          className="w-48 gap-2"
+          disabled={isLoading}
+        >
+          {isLoading ? (
+            <>
+              <Loader2 className="h-4 w-4 animate-spin" />
+              Retrying...
+            </>
+          ) : (
+            "Try again"
+          )}
         </Button>
       </div>
     );

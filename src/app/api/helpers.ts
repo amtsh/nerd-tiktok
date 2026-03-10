@@ -2,7 +2,7 @@ import {
   createOpenRouter,
   OpenRouterProvider,
 } from "@openrouter/ai-sdk-provider";
-import { streamObject, streamText } from "ai";
+import { streamObject } from "ai";
 import { bookSchema } from "./stream-topic-as-object/schema";
 import { Mode } from "@/lib/types";
 
@@ -43,19 +43,6 @@ ${outputFormatPrompt}`;
 
     return storyPrompt;
   }
-};
-
-export const requestStreamAsText = async (
-  query: string,
-  mode: Mode,
-  llmModelName: string
-) => {
-  const openrouter = getOpenRouterClient();
-
-  return await streamText({
-    model: openrouter(llmModelName),
-    prompt: getPromptByMode(mode, query),
-  });
 };
 
 export const requestStreamAsObject = async (
