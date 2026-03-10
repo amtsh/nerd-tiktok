@@ -36,7 +36,7 @@ export function CuriousTopics({ mode }: CuriousTopicsProps) {
         </span>
         <button
           onClick={handleRefresh}
-          className="p-1.5 rounded-lg text-zinc-600 hover:text-zinc-300 hover:bg-white/5 transition-colors"
+          className="p-1.5 rounded-lg bg-zinc-900 border border-white/20 shadow-[0_2px_8px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_2px_rgba(0,0,0,0.4)] text-zinc-400 hover:text-zinc-200 hover:bg-zinc-700 transition-all"
           aria-label="Refresh topics"
         >
           <RefreshCw className="h-3.5 w-3.5" />
@@ -51,7 +51,7 @@ export function CuriousTopics({ mode }: CuriousTopicsProps) {
                   `/feed?query=${encodeURIComponent(topic.title)}&mode=${mode}`,
                 )
               }
-              className="w-full flex items-center gap-3 py-2.5 rounded-xl text-left"
+              className="w-full flex items-center gap-3 py-2.5 px-2 rounded-xl text-left hover:bg-zinc-800 hover:border hover:border-white/[0.1] hover:shadow-[inset_0_1px_0_rgba(255,255,255,0.06)] transition-all"
             >
               <Search className="h-3 w-3 text-zinc-600 shrink-0" />
               <div className="flex-1 min-w-0">

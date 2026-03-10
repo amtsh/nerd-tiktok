@@ -32,9 +32,7 @@ export function InputForm({ mode, onModeChange }: InputFormProps) {
       <Input
         type="text"
         placeholder={
-          mode === Mode.LEARN
-            ? "Learn something new today."
-            : "Read a new story today."
+          mode === Mode.LEARN ? "Type a topic ..." : "Read a new story today."
         }
         className="w-full border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-zinc-600 px-0 py-0 mb-4 h-auto"
         onChange={(e) => setSearchInput(e.target.value)}
@@ -47,11 +45,19 @@ export function InputForm({ mode, onModeChange }: InputFormProps) {
           value={mode}
           onValueChange={(value: string) => onModeChange(value as Mode)}
         >
-          <TabsList className="rounded-full bg-zinc-800">
-            <TabsTrigger value="learn" type="button" className="rounded-full">
+          <TabsList className="rounded-full bg-black-900 border border-white/20 shadow-[0_4px_16px_rgba(0,0,0,0.4),inset_0_1px_0_rgba(255,255,255,0.1),inset_0_-1px_3px_rgba(0,0,0,0.4)]">
+            <TabsTrigger
+              value="learn"
+              type="button"
+              className="rounded-full text-zinc-400 data-[state=active]:bg-zinc-800 data-[state=active]:text-white data-[state=active]:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_2px_rgba(0,0,0,0.3)]"
+            >
               Learn
             </TabsTrigger>
-            <TabsTrigger value="story" type="button" className="rounded-full">
+            <TabsTrigger
+              value="story"
+              type="button"
+              className="rounded-full text-zinc-400 data-[state=active]:bg-zinc-800 data-[state=active]:text-white data-[state=active]:shadow-[inset_0_1px_0_rgba(255,255,255,0.08),inset_0_-1px_2px_rgba(0,0,0,0.3)]"
+            >
               Story
             </TabsTrigger>
           </TabsList>
