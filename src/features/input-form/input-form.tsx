@@ -37,7 +37,6 @@ export function InputForm({ mode, onModeChange }: InputFormProps) {
         className="w-full border-0 bg-transparent focus-visible:ring-0 focus-visible:ring-offset-0 text-base placeholder:text-zinc-600 px-0 py-0 mb-4 h-auto"
         onChange={(e) => setSearchInput(e.target.value)}
         value={searchInput}
-        autoFocus
       />
 
       <div className="flex items-center justify-between gap-3">
