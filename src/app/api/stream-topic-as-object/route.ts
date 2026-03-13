@@ -16,6 +16,7 @@ export async function POST(request: Request) {
   }
 
   const freeModels = [
+    "x-ai/grok-4.1-fast",
     "openrouter/free",
   ];
 
