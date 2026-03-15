@@ -14,15 +14,12 @@ const fetcher = async (
   input: RequestInfo | URL,
   init?: RequestInit,
 ): Promise<Response> => {
+  const headers = new Headers(init?.headers);
+  headers.set("Content-Type", "application/json");
   const response = await fetch(input, {
     ...init,
     method: "POST",
-    headers: {
-      "Content-Type": "text/plain",
-    },
-    next: {
-      revalidate: 60 * 60 * 24,
-    },
+    headers,
   });
   return response;
 };
@@ -70,6 +67,10 @@ export function FeedView() {
     } else {
       router.push("/");
     }
+
+    return () => {
+      hasRequested.current = false;
+    };
   }, []);
 
   if (error) {
