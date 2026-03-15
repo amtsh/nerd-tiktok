@@ -15,16 +15,13 @@ export async function POST(request: Request) {
     );
   }
 
-  const freeModels = [
-    "x-ai/grok-4.1-fast",
-    "openrouter/free",
-  ];
+  const model = "x-ai/grok-4.1-fast";
 
   try {
     const result = await requestStreamAsObject(
       query as string,
       mode as Mode,
-      freeModels[0]
+      model
     );
     return result.toTextStreamResponse();
   } catch (error) {

@@ -1,4 +1,3 @@
-import React from "react";
 import Image from "next/image";
 import { Content } from "@/ui/content";
 import { HomeForm } from "@/features/home-form";

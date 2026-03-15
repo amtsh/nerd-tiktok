@@ -1,5 +1,3 @@
-import React from "react";
-
 export interface Page {
   pageTitle?: string;
   pageContent?: string;

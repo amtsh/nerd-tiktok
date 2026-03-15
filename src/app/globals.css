@@ -78,58 +78,11 @@
 }
 
 @layer utilities {
-  .scrollbar-hide::-webkit-scrollbar {
-    display: none;
-  }
-
-  .scrollbar-hide {
-    -ms-overflow-style: none;
-    scrollbar-width: none;
-    -webkit-scrollbar: none;
-  }
-
   .text-balance {
     text-wrap: balance;
   }
 
   .text-pretty {
     text-wrap: pretty;
-  }
-
-  .border-shadow {
-    box-shadow:
-      0px 0px 0px 1px rgba(0, 0, 0, 0.06),
-      0px 1px 2px -1px rgba(0, 0, 0, 0.06),
-      0px 2px 4px 0px rgba(0, 0, 0, 0.04);
-  }
-
-  .dark .border-shadow {
-    box-shadow:
-      0px 0px 0px 1px rgba(255, 255, 255, 0.1),
-      0px 1px 2px -1px rgba(255, 255, 255, 0.08),
-      0px 2px 4px 0px rgba(255, 255, 255, 0.06);
-  }
-
-  .border-shadow-hover:hover {
-    box-shadow:
-      0px 0px 0px 1px rgba(0, 0, 0, 0.08),
-      0px 1px 2px -1px rgba(0, 0, 0, 0.08),
-      0px 2px 4px 0px rgba(0, 0, 0, 0.06);
-  }
-
-  .dark .border-shadow-hover:hover {
-    box-shadow:
-      0px 0px 0px 1px rgba(255, 255, 255, 0.08),
-      0px 1px 2px -1px rgba(255, 255, 255, 0.08),
-      0px 2px 4px 0px rgba(255, 255, 255, 0.06);
-  }
-
-  .image-outline {
-    outline: 1px solid rgba(0, 0, 0, 0.1);
-    outline-offset: -1px;
-  }
-
-  .dark .image-outline {
-    outline-color: rgba(255, 255, 255, 0.1);
   }
 }

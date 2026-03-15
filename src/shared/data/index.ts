@@ -1,10 +1,9 @@
 type Topic = {
   category: string;
   title: string;
-  posts?: string;
 };
 
-export type TabContent = {
+type TabContent = {
   [key: string]: Topic[];
 };
 

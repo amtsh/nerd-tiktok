@@ -22,7 +22,11 @@ interface CuriousTopicsProps {
 export function CuriousTopics({ mode }: CuriousTopicsProps) {
   const router = useRouter();
   const [refreshKey, setRefreshKey] = useState(0);
-  const topics = useMemo(() => getRandomTopics(mode), [mode, refreshKey]);
+  const topics = useMemo(
+    () => getRandomTopics(mode),
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- refreshKey triggers re-randomization on refresh
+    [mode, refreshKey],
+  );
 
   const handleRefresh = useCallback(() => {
     setRefreshKey((k) => k + 1);

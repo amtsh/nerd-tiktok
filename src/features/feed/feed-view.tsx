@@ -71,6 +71,7 @@ export function FeedView() {
     return () => {
       hasRequested.current = false;
     };
+    // eslint-disable-next-line react-hooks/exhaustive-deps -- run once on mount; adding deps would cause duplicate submissions
   }, []);
 
   if (error) {

@@ -1,1 +1,1 @@
-export { FeedItem, type Page } from "./feed-item";
+export { FeedItem } from "./feed-item";
